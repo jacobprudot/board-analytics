@@ -90,7 +90,7 @@ export async function getBoardActivity(boardId, limit = 100) {
 }
 
 /**
- * Get board info (name, workspace, etc.)
+ * Get board info (name, groups, etc.)
  */
 export async function getBoardInfo(boardId) {
   const query = `query ($boardId: [ID!]) {
@@ -98,20 +98,10 @@ export async function getBoardInfo(boardId) {
       id
       name
       description
-      state
-      board_kind
-      workspace {
-        id
-        name
-      }
       groups {
         id
         title
         color
-      }
-      owners {
-        id
-        name
       }
     }
   }`;
