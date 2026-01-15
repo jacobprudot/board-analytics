@@ -1,0 +1,24 @@
+{
+  "name": "Board Analytics",
+  "slug": "board-analytics",
+  "description": "Get powerful insights and analytics for your monday.com boards",
+  "version": "1.0.0",
+  "features": [
+    {
+      "type": "BoardView",
+      "name": "Board Analytics",
+      "description": "View analytics and insights for your board data",
+      "slug": "board-analytics-view",
+      "icon": "logo.png",
+      "settings": {}
+    }
+  ],
+  "oauth": {
+    "scopes": [
+      "boards:read"
+    ]
+  },
+  "build": {
+    "outputDir": "dist"
+  }
+}

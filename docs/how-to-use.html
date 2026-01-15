@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Use - Board Analytics</title>
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            line-height: 1.6;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            color: #333;
+            background-color: #f9fafb;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 2px solid #0073ea;
+        }
+        .header h1 { color: #0073ea; margin: 0 0 10px 0; font-size: 32px; }
+        .header p { color: #666; font-size: 18px; margin: 0; }
+        .section {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 24px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+        h2 {
+            color: #323338;
+            margin-top: 0;
+            margin-bottom: 16px;
+            font-size: 22px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        h2 .step-number {
+            background: #0073ea;
+            color: white;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            font-weight: 600;
+        }
+        h3 { color: #323338; margin-top: 24px; margin-bottom: 12px; font-size: 18px; }
+        p { margin: 0 0 16px 0; }
+        ul, ol { padding-left: 24px; margin: 0 0 16px 0; }
+        li { margin-bottom: 8px; }
+        .tip {
+            background: #e8f4fd;
+            border-left: 4px solid #0073ea;
+            padding: 16px;
+            border-radius: 0 8px 8px 0;
+            margin: 16px 0;
+        }
+        .tip-title { font-weight: 600; color: #0073ea; margin-bottom: 8px; }
+        .metric-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin: 16px 0;
+        }
+        .metric-item {
+            background: #f6f7fb;
+            padding: 16px;
+            border-radius: 8px;
+        }
+        .metric-item .icon { font-size: 24px; margin-bottom: 8px; }
+        .metric-item .label { font-weight: 600; color: #323338; }
+        .metric-item .desc { font-size: 13px; color: #676879; margin-top: 4px; }
+        .tab-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 12px;
+            margin: 16px 0;
+        }
+        .tab-item {
+            background: #f6f7fb;
+            padding: 16px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .tab-item .name { font-weight: 600; color: #0073ea; margin-bottom: 4px; }
+        .tab-item .desc { font-size: 12px; color: #676879; }
+        code {
+            background: #f0f0f0;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 14px;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid #e6e9ef;
+            color: #666;
+            font-size: 14px;
+        }
+        .footer a { color: #0073ea; text-decoration: none; }
+        .footer a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Board Analytics</h1>
+        <p>Powerful analytics and insights for your monday.com boards</p>
+    </div>
+
+    <!-- Getting Started -->
+    <div class="section">
+        <h2><span class="step-number">1</span> Getting Started</h2>
+        <p>Board Analytics is a Board View that provides real-time analytics and visualizations for your monday.com boards. After installation, add it to any board:</p>
+        <ol>
+            <li>Open your board</li>
+            <li>Click the <strong>+ Add View</strong> button</li>
+            <li>Search for <strong>"Board Analytics"</strong></li>
+            <li>Click to add it to your board</li>
+        </ol>
+        <p>The app will automatically load your board data and display analytics.</p>
+    </div>
+
+    <!-- Key Metrics -->
+    <div class="section">
+        <h2><span class="step-number">2</span> Key Metrics Dashboard</h2>
+        <p>At the top of the view, you'll see key metrics cards:</p>
+
+        <div class="metric-grid">
+            <div class="metric-item">
+                <div class="icon">📋</div>
+                <div class="label">Total Items</div>
+                <div class="desc">Total number of items in your board</div>
+            </div>
+            <div class="metric-item">
+                <div class="icon">✨</div>
+                <div class="label">Created This Week</div>
+                <div class="desc">Items created in the last 7 days</div>
+            </div>
+            <div class="metric-item">
+                <div class="icon">📝</div>
+                <div class="label">Updated This Week</div>
+                <div class="desc">Items with recent activity</div>
+            </div>
+            <div class="metric-item">
+                <div class="icon">⚠️</div>
+                <div class="label">Stale Items</div>
+                <div class="desc">Items not updated in 14+ days</div>
+            </div>
+            <div class="metric-item">
+                <div class="icon">🚨</div>
+                <div class="label">Overdue</div>
+                <div class="desc">Items past their due date (if date column selected)</div>
+            </div>
+        </div>
+
+        <div class="tip">
+            <div class="tip-title">Understanding Stale Items</div>
+            Items are considered "stale" if they haven't been updated in more than 14 days. This helps identify tasks that might be stuck or forgotten.
+        </div>
+    </div>
+
+    <!-- Tab Views -->
+    <div class="section">
+        <h2><span class="step-number">3</span> Tab Views</h2>
+        <p>Board Analytics organizes insights into four tabs:</p>
+
+        <div class="tab-grid">
+            <div class="tab-item">
+                <div class="name">Overview</div>
+                <div class="desc">Status donut chart + Group bar chart</div>
+            </div>
+            <div class="tab-item">
+                <div class="name">Distribution</div>
+                <div class="desc">Detailed status and group breakdowns</div>
+            </div>
+            <div class="tab-item">
+                <div class="name">Timeline</div>
+                <div class="desc">Items created over last 30 days</div>
+            </div>
+            <div class="tab-item">
+                <div class="name">Issues</div>
+                <div class="desc">Overdue and stale items tables</div>
+            </div>
+        </div>
+
+        <h3>Overview Tab</h3>
+        <p>The Overview tab shows two main visualizations:</p>
+        <ul>
+            <li><strong>Status Distribution (Donut Chart):</strong> Shows how items are distributed across different status values</li>
+            <li><strong>Items by Group (Bar Chart):</strong> Shows the number of items in each group</li>
+        </ul>
+
+        <h3>Distribution Tab</h3>
+        <p>Provides detailed bar charts showing the full breakdown of statuses and groups with exact counts and percentages.</p>
+
+        <h3>Timeline Tab</h3>
+        <p>Displays a line chart showing how many items were created each day over the last 30 days. Useful for tracking activity trends and workload patterns.</p>
+
+        <h3>Issues Tab</h3>
+        <p>Shows two sortable tables:</p>
+        <ul>
+            <li><strong>Overdue Items:</strong> Items past their due date (requires date column selection)</li>
+            <li><strong>Stale Items:</strong> Items not updated in the longest time</li>
+        </ul>
+    </div>
+
+    <!-- Column Configuration -->
+    <div class="section">
+        <h2><span class="step-number">4</span> Column Configuration</h2>
+        <p>Board Analytics automatically detects your columns, but you can customize:</p>
+
+        <h3>Status Column</h3>
+        <p>Select which status column to use for the status distribution charts. The app will auto-detect columns of type "Status" or "Color".</p>
+
+        <h3>Date Column</h3>
+        <p>Select a date column to enable overdue item detection. The app will compare item dates against today to identify overdue tasks.</p>
+
+        <div class="tip">
+            <div class="tip-title">Tip</div>
+            If you have multiple status or date columns, use the dropdowns to switch between them and see different perspectives on your data.
+        </div>
+    </div>
+
+    <!-- Understanding Charts -->
+    <div class="section">
+        <h2><span class="step-number">5</span> Understanding the Charts</h2>
+
+        <h3>Donut Chart (Status Distribution)</h3>
+        <ul>
+            <li>Shows the proportion of items in each status</li>
+            <li>Hover over segments to see exact counts and percentages</li>
+            <li>Legend shows the top 6 statuses</li>
+            <li>Center displays total item count</li>
+        </ul>
+
+        <h3>Bar Chart</h3>
+        <ul>
+            <li>Horizontal bars show relative quantities</li>
+            <li>Numbers on the right show exact counts</li>
+            <li>Hover for percentage of total</li>
+            <li>Colors match your monday.com status/group colors</li>
+        </ul>
+
+        <h3>Line Chart (Timeline)</h3>
+        <ul>
+            <li>X-axis shows dates (last 30 days)</li>
+            <li>Y-axis shows number of items created</li>
+            <li>Dots represent data points for each day</li>
+            <li>Shows total and average items per day</li>
+        </ul>
+
+        <h3>Data Tables</h3>
+        <ul>
+            <li>Click column headers to sort</li>
+            <li>Shows top 10 items by default</li>
+            <li>Color-coded severity indicators</li>
+        </ul>
+    </div>
+
+    <!-- Dark Mode -->
+    <div class="section">
+        <h2><span class="step-number">6</span> Dark Mode</h2>
+        <p>Board Analytics automatically adapts to your monday.com theme settings:</p>
+        <ul>
+            <li>Light mode: Clean white backgrounds</li>
+            <li>Dark mode: Dark backgrounds with adjusted colors</li>
+            <li>Charts and metrics adjust automatically</li>
+        </ul>
+        <p>No configuration needed - it follows your monday.com account theme preference.</p>
+    </div>
+
+    <!-- Use Cases -->
+    <div class="section">
+        <h2><span class="step-number">7</span> Common Use Cases</h2>
+
+        <h3>Project Managers</h3>
+        <ul>
+            <li>Monitor overall project health with key metrics</li>
+            <li>Identify stale tasks that need attention</li>
+            <li>Track overdue items for deadline management</li>
+        </ul>
+
+        <h3>Team Leads</h3>
+        <ul>
+            <li>See work distribution across groups</li>
+            <li>Identify bottlenecks in status flow</li>
+            <li>Monitor team activity with timeline</li>
+        </ul>
+
+        <h3>Executives</h3>
+        <ul>
+            <li>Quick board health overview</li>
+            <li>Status distribution for reporting</li>
+            <li>Identify areas needing attention</li>
+        </ul>
+    </div>
+
+    <!-- Refresh Data -->
+    <div class="section">
+        <h2><span class="step-number">8</span> Refreshing Data</h2>
+        <p>Board Analytics loads data when you open the view. To refresh:</p>
+        <ul>
+            <li>Click the <strong>Refresh</strong> button in the top-right corner</li>
+            <li>Or reload the board view</li>
+        </ul>
+        <p>Data is fetched in real-time from your board, so analytics always reflect the current state.</p>
+    </div>
+
+    <!-- Support -->
+    <div class="section">
+        <h2>Need Help?</h2>
+        <p>If you have questions or need assistance, please contact us:</p>
+        <p><strong>Email:</strong> <a href="mailto:leongaelllc@gmail.com">leongaelllc@gmail.com</a></p>
+        <p>We typically respond within 24-48 business hours.</p>
+    </div>
+
+    <div class="footer">
+        <p>Board Analytics is developed by <strong>Leon Gael LLC</strong></p>
+        <p>
+            <a href="privacy-policy.html">Privacy Policy</a> |
+            <a href="terms-of-service.html">Terms of Service</a>
+        </p>
+    </div>
+</body>
+</html>
