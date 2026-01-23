@@ -212,7 +212,7 @@ function App() {
         </div>
 
         <Button
-          kind={Button.kinds.TERTIARY}
+          kind={Button.kinds.SECONDARY}
           leftIcon={Update}
           onClick={loadBoardData}
         >
